@@ -579,6 +579,14 @@ public class VisionSourceManager {
                         && !newCam.getSettables().videoModes.isEmpty()) {
                     cameraSources.add(newCam);
                 }
+
+                newCam.getSettables().setAutoExposure(true);
+                try {
+                    Thread.sleep(3000);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                newCam.getSettables().setAutoExposure(false);
             }
         }
         return cameraSources;
